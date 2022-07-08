@@ -1,1 +1,54 @@
-Get http://localhost:3300/
+
+### Login auth: public
+
+Get http://localhost:3300/login
+
+### Dashboard auth: users
+
+Get http://localhost:3300/dashboard
+Content-Type: application/json
+
+{
+    "userId": 1
+}
+
+
+### Runs auth: admin
+
+Get http://localhost:3300/runs
+Content-Type: application/json
+
+{
+    "userId": 4
+}
+
+
+
+
+### Show Run auth: ADMIN or RUNDRIVER
+
+get http://localhost:3300/runs/2
+Content-Type: application/json 
+
+{
+    "userId": 2
+}
+
+
+### Get Vehicles auth: ADMIN
+
+get http://localhost:3300/vehicles
+Content-Type: application/json
+
+{
+    "userId": 2
+}
+
+### Show Vehicle auth: ADMIN or VEHICLE_DRIVER
+
+get http://localhost:3300/vehicles/2
+Content-Type: application/json
+
+{
+    "userId": 2
+}
