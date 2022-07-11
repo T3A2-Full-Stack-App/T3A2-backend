@@ -52,3 +52,14 @@ Content-Type: application/json
 {
     "userId": 2
 }
+
+### Drivers routes
+
+### GET Drivers auth: admin
+
+get http://localhost:3300/drivers
+Content-Type: application/json
+
+{
+    "userId": 4
+}

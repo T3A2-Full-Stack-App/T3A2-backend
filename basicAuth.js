@@ -1,3 +1,6 @@
+// Authentication handlers
+
+// Handler to check if user is a registered user 
 function authUser(req, res, next) {
     if (req.user == null) {
         res.status(403)
@@ -7,6 +10,7 @@ function authUser(req, res, next) {
     next()
 }
 
+// Handler to check if the user's role matches the required role for the task
 function authRole(role) {
     return (req, res, next) => {
         if (req.user.role !== role) {

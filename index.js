@@ -4,11 +4,13 @@ const { users, ROLE } = require("./data")
 const { authUser, authRole } = require("./basicAuth")
 const runRouter = require("./routes/runs")
 const vehicleRouter = require("./routes/vehicles")
+const driverRouter = require("./routes/drivers")
 
 app.use(express.json())
 app.use(setUser)
 app.use("/runs", runRouter)
 app.use("/vehicles", vehicleRouter)
+app.use("/drivers", driverRouter)
 
 app.get("/login", (req, res) => {
   res.send("Login Page")
