@@ -7,10 +7,22 @@ Get http://localhost:3300/login
 ### GET User Routes auth: ADMIN
 
 Get http://localhost:3300/users
+Content-Type: application/json
 
-### POST User Routes auth: ADMIN
+{
+    "_id": "62ccad760c6b8ee48710ff46"
+}
 
-Get http://localhost:3300/users
+### POST User Routes auth: public
+
+Post http://localhost:3300/users
+Content-Type: application/json
+
+{
+    "firstName": "Greg",
+    "lastName": "Johnson",
+    "role": "admin"
+}
 
 ### Dashboard auth: users
 

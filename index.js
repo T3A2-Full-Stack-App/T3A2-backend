@@ -1,11 +1,11 @@
 const express = require("express")
 const app = express()
-const { users, ROLE } = require("./data")
 const { authUser, authRole } = require("./basicAuth")
 const runRouter = require("./routes/runs")
 const vehicleRouter = require("./routes/vehicles")
 const driverRouter = require("./routes/drivers")
 const userRouter = require("./routes/users")
+const UserModel = require("./database/user_model")
 
 app.use(express.json())
 app.use(setUser)
@@ -22,16 +22,20 @@ app.get("/dashboard", authUser, (req, res) => {
   res.send("Dashboard Page")
 })
 
-
-
 function setUser(req, res, next) {
-  const userId = req.body.userId
+  const userId = req.body._id
   if (userId) {
-    req.user = users.find(user => user.id === userId)
+    UserModel.findById(userId, (err, doc) => {
+      if (err) {
+        res.status(404).send({ err })
+      } else {
+        req.user = doc
+        next()
+      }
+    })
   }
-  next()
+ 
 }
 
 const port = 3300
 app.listen(port, () => console.log(`App running at http://localhost:${port}/`))
-
