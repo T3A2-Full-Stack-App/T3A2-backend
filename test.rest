@@ -3,6 +3,15 @@
 
 Get http://localhost:3300/login
 
+
+### GET User Routes auth: ADMIN
+
+Get http://localhost:3300/users
+
+### POST User Routes auth: ADMIN
+
+Get http://localhost:3300/users
+
 ### Dashboard auth: users
 
 Get http://localhost:3300/dashboard
