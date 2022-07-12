@@ -10,7 +10,8 @@ Get http://localhost:3300/users
 Content-Type: application/json
 
 {
-    "_id": "62ccad760c6b8ee48710ff46"
+    "_id": "62ccad760c6b8ee48710ff46",
+
 }
 
 ### POST User Routes auth: public
@@ -19,9 +20,10 @@ Post http://localhost:3300/users
 Content-Type: application/json
 
 {
-    "firstName": "Greg",
+    "_id": "62ccad760c6b8ee48710ff46",
+    "firstName": "Mitchell",
     "lastName": "Johnson",
-    "role": "admin"
+    "role": "driver"
 }
 
 ### Dashboard auth: users
