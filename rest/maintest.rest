@@ -1,0 +1,56 @@
+
+### Login auth: public
+
+Get http://localhost:3300/login
+
+
+
+### POST User Routes auth: public
+
+Post http://localhost:3300/users
+Content-Type: application/json
+
+{
+    "firstName": "Mitchell",
+    "lastName": "Johnson",
+    "role": "driver"
+}
+
+### Dashboard auth: users
+
+Get http://localhost:3300/dashboard
+Content-Type: application/json
+
+{
+    "userId": 1
+}
+
+
+
+### Get Vehicles auth: ADMIN
+
+get http://localhost:3300/vehicles
+Content-Type: application/json
+
+{
+    "userId": 2
+}
+
+### Show Vehicle auth: ADMIN or VEHICLE_DRIVER
+
+get http://localhost:3300/vehicles/2
+Content-Type: application/json
+
+{
+    "userId": 2
+}
+
+### GET Drivers auth: admin
+
+Get http://localhost:3300/drivers
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}
