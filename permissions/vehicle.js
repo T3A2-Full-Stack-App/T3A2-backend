@@ -1,9 +1,7 @@
-const { ROLE } = require('../data')
+const UserModel = require("../database/user_model")
 
 function canViewVehicle(user, vehicle) {
-    return (
-        user.role === ROLE.ADMIN || vehicle.userId === user.id
-    )
+  return user.role === 'admin' || vehicle.user === user._id
 }
 
-module.exports = { canViewVehicle}
+module.exports = { canViewVehicle }

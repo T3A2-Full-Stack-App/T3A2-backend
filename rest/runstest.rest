@@ -1,0 +1,21 @@
+
+### POST / RUNS / ADMIN
+Post http://localhost:3300/runs
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44",
+    "name": "Route 1",
+    "area": "Brisbane North"
+}
+
+
+### GET  / RUNS / ADMIN
+
+Get http://localhost:3300/runs
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}

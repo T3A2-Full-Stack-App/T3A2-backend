@@ -1,7 +1,7 @@
-const { ROLE } = require("../data")
+const UserModel = require("../database/user_model")
 
 function canViewRun(user, run) {
-  return ( user.role === ROLE.ADMIN || run.userId === user.id )
+  return user.role === 'admin' || run.user === user._id
 }
 
 module.exports = { canViewRun }

@@ -1,27 +1,53 @@
 const express = require("express")
 const router = express.Router()
-const { runs, users, ROLE } = require("../data")
+const RunModel = require('../database/runs_model')
 const { authUser, authRole } = require("../basicAuth")
 const { canViewRun } = require("../permissions/run")
+const { reduceRight } = require("underscore")
 
 
-router.get("/", authUser, authRole(ROLE.ADMIN), (req, res) => {
-  res.json(runs)
+router.get("/", authUser, authRole("admin"), async (req, res, next) => {
+  try {
+    res.status(200).send(await RunModel.find())
+  }
+  catch {
+    res.status(400)
+    return res.send("You are not authorised to view these runs")
+  }
 })
 
-router.get("/:runId", setRun, authUser, authGetRun, (req, res) => {
-  res.json(req.run)
+router.post("/", authUser, authRole("admin"), async (req, res, next) => {
+  const newRun = {
+    area: req.body.area,
+    name: req.body.name,
+    user: req.body._id
+  }
+  RunModel.create(newRun, (err, doc) => {
+    if (err) {
+        res.status(422).send(err.message)
+    } else {
+      res.status(201).send(doc)
+      }
+    })
 })
+
+// router.get("/_id", setRun, authUser, authGetRun, (req, res) => {
+//   res.json(req.run)
+// })
 
 function setRun(req, res, next) {
-  const runId = parseInt(req.params.runId)
-  req.run = runs.find((run) => run.id === runId)
-
-  if (req.run == null) {
-    res.status(404)
-    return res.send("Unable to locate run")
+  const runId = parseInt(req.params._id)
+  if (runId) {
+    RunModel.findById(runId, (err, doc) => {
+      if (err) {
+        res.status(404)
+        return res.send("You are not authorised to view this" )
+      } else {
+        req.run = doc
+        next()
+      }
+    })
   }
-  next()
 }
 
 function authGetRun(req, res, next) {

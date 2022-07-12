@@ -4,15 +4,6 @@
 Get http://localhost:3300/login
 
 
-### GET User Routes auth: ADMIN
-
-Get http://localhost:3300/drivers
-Content-Type: application/json
-
-{
-    "_id": "62ccad750c6b8ee48710ff44"
-
-}
 
 ### POST User Routes auth: public
 
@@ -35,27 +26,6 @@ Content-Type: application/json
 }
 
 
-### Runs auth: admin
-
-Get http://localhost:3300/runs
-Content-Type: application/json
-
-{
-    "userId": 4
-}
-
-
-
-
-### Show Run auth: ADMIN or RUNDRIVER
-
-get http://localhost:3300/runs/2
-Content-Type: application/json 
-
-{
-    "userId": 2
-}
-
 
 ### Get Vehicles auth: ADMIN
 
@@ -75,13 +45,12 @@ Content-Type: application/json
     "userId": 2
 }
 
-### Drivers routes
-
 ### GET Drivers auth: admin
 
-get http://localhost:3300/drivers
+Get http://localhost:3300/drivers
 Content-Type: application/json
 
 {
-    "userId": 4
+    "_id": "62ccad750c6b8ee48710ff44"
+
 }

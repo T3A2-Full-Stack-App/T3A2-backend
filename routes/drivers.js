@@ -5,7 +5,7 @@ const { authUser, authRole } = require("../basicAuth")
 
 router.get("/", authUser, authRole("admin"), async (req, res, next) => {
   try {
-    res.status(200).send(await UserModel.find())
+    res.status(200).send(await UserModel.find({role: 'driver'}))
   } catch {
     res.status(400).send
   }
