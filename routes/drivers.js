@@ -1,15 +1,14 @@
 const express = require("express")
 const router = express.Router()
 const UserModel = require("../database/user_model")
-const { users, runs, vehicles, ROLE } = require("../data")
 const { authUser, authRole } = require("../basicAuth")
 
-router.get("/", authUser, authRole(ROLE.ADMIN), (req, res) => {
-  // const drivers = users.findOne({ ROLE: ROLE.DRIVER })
-  // console.log(drivers)
-}
-)
- 
-
+router.get("/", authUser, authRole("admin"), async (req, res, next) => {
+  try {
+    res.status(200).send(await UserModel.find())
+  } catch {
+    res.status(400).send
+  }
+})
 
 module.exports = router
