@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
     "_id": "62ccad750c6b8ee48710ff44",
-    "name": "Route 1",
-    "area": "Brisbane North"
+    "name": "Route 4",
+    "area": "Ballina"
 }
 
 
@@ -17,5 +17,37 @@ Content-Type: application/json
 
 {
     "_id": "62ccad750c6b8ee48710ff44"
+
+}
+
+
+### GET / A RUN / ADMIN
+
+Get http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}
+
+
+### DELETE / A RUN / ADMIN
+Delete http://localhost:3300/runs/62cd0fe1ef4a5b0734e2d30d
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}
+
+### UPDATE / A RUN / ADMIN
+Put http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44",
+    "name": "Route 4",
+    "area": "Sunshine Coast"
 
 }
