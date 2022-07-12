@@ -7,7 +7,7 @@ const vehicleSchema = new mongoose.Schema({
     year: { type: Number, required: true },
     registration: { type: String, required: true },
     user: { type: Schema.Types.ObjectId, ref: "User"},
-    kilometers: { type: number, required: true },
+    kilometers: { type: Number, required: true },
     nextService: { type: Number, required: true }
 })
 

@@ -1,0 +1,36 @@
+### GET - Admin
+
+Get http://localhost:3300/vehicles
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}
+
+### POST- Admin
+
+Post http://localhost:3300/vehicles
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44",
+    "make": "Ford",
+    "model": "Transit",
+    "year": "2018",
+    "registration": "ABC123",
+    "user": "62ccd3eecada19e652d3a0a4",
+    "kilometers": "200000",
+    "nextService": "215000"
+}
+
+
+### GET a vehicle - admin or vehicle driver
+
+Get http://localhost:3300/vehicles/62cd672dc738ad24f929f0b0
+Content-Type: application/json
+
+{
+    "_id": "62ccd3eecada19e652d3a0a4"
+
+}

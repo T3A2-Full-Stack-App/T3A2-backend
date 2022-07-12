@@ -8,7 +8,7 @@ router.get("/", authUser, authRole("admin"), async (req, res, next) => {
     res.status(200).send(await RunModel.find())
   } catch {
     res.status(400)
-    return res.send("You are not authorised to view these runs")
+    return res.send("Unable to display users")
   }
 })
 

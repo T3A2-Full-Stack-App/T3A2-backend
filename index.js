@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const { authUser, authRole } = require("./basicAuth")
 const runRouter = require("./routes/runs")
-// const vehicleRouter = require("./routes/vehicles")
+const vehicleRouter = require("./routes/vehicles")
 const driverRouter = require("./routes/drivers")
 const userRouter = require("./routes/users")
 const UserModel = require("./database/user_model")
@@ -39,7 +39,7 @@ function setUser(req, res, next) {
 app.use("/users", userRouter)
 app.use(setUser)
 app.use("/runs", runRouter)
-// app.use("/vehicles", vehicleRouter)
+app.use("/vehicles", vehicleRouter)
 app.use("/drivers", driverRouter)
 
 
