@@ -33,7 +33,7 @@ Content-Type: application/json
 
 
 ### DELETE / A RUN / ADMIN
-Delete http://localhost:3300/runs/62cd0fe1ef4a5b0734e2d30d
+Delete http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 }
 
-### UPDATE / A RUN / ADMIN
+### UPDATE / A RUN / ADMIN or RUN
 Put http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
 Content-Type: application/json
 
@@ -51,3 +51,5 @@ Content-Type: application/json
     "area": "Sunshine Coast"
 
 }
+
+

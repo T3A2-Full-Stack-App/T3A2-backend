@@ -15,7 +15,7 @@ function authRole(role) {
     return (req, res, next) => {
         if (req.user.role !== role) {
             res.status(401)
-            return res.send('You are not authorised to access this page')
+            return res.send('You are not authorised to perform this action')
         }
         next()
     }

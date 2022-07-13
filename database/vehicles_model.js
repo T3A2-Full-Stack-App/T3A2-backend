@@ -8,7 +8,11 @@ const vehicleSchema = new mongoose.Schema({
     registration: { type: String, required: true },
     user: { type: Schema.Types.ObjectId, ref: "User"},
     kilometers: { type: Number, required: true },
-    nextService: { type: Number, required: true }
+    nextService: { type: Number, required: true },
+    comments: [{ 
+        entry: { type: String },
+        date: { type: Date, default: Date.now}
+    }]
 })
 
 const VehicleModel = mongoose.model('Vehicle', vehicleSchema)
