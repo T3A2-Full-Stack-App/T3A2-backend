@@ -8,7 +8,7 @@ router.get("/", authUser, authRole("admin"), async (req, res, next) => {
     res.status(200).send(await RunModel.find())
   } catch {
     res.status(400)
-    return res.send("You are not authorised to view these runs")
+    return res.send("Unable to display users")
   }
 })
 
@@ -34,12 +34,13 @@ router.get("/:id", setRun, authUser, (req, res) => {
   }
 })
 
-router.delete("/:id", setRun, authUser, (req, res) => {
+router.delete("/:id", setRun, authUser, authRole("admin"), (req, res) => {
   RunModel.deleteOne(req.run, (err, doc) => {
     if (err) {
       res.status(405).send
     } else {
-      res.status(204).send("Deleted run")
+      res.status(204)
+      return res.send("Deleted run")
     }
   })
 })
@@ -51,7 +52,8 @@ router.put("/:id", authUser, (req, res, next) => {
     {new : true},
     (err, doc) => {
       if (err) {
-        res.status(400).send
+        res.status(400)
+        return res.send("Unable to udpate run")
       } else {
         res.status(200).send(doc)
       }
