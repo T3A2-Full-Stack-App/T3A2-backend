@@ -7,12 +7,29 @@ Get http://localhost:3300/login
 
 ### POST User Routes auth: public
 
-Post http://localhost:3300/users
+Post http://localhost:3300/users/register
 Content-Type: application/json
 
 {
-    "firstName": "Jarryd",
+    "email": "mike@wizzcouriers.com",
+    "firstName": "Mike",
+    "lastName": "Jaws",
+    "password": "123456",
+    "passwordCheck": "123456",
+    "role": "driver"
+}
+
+### POST User Routes auth: public
+
+Post http://localhost:3300/users/login
+Content-Type: application/json
+
+{
+    "email": "greg@wizzcouriers.com",
+    "firstName": "Greg",
     "lastName": "Johnson",
+    "password": "123456",
+    "passwordCheck": "123456",
     "role": "admin"
 }
 
