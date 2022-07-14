@@ -1,24 +1,16 @@
 const express = require("express")
 const app = express()
+const cors = require("cors")
+require("dotenv").config()
 const { authUser, authRole } = require("./basicAuth")
+
 const runRouter = require("./routes/runs")
 const vehicleRouter = require("./routes/vehicles")
 const driverRouter = require("./routes/drivers")
 const userRouter = require("./routes/users")
 const UserModel = require("./database/user_model")
 app.use(express.json())
-
-app.get("/login", (req, res) => {
-  res.send("Login Page")
-})
-
-app.get("/register", (req, res) => {
-  res.send("Register Page")
-})
-
-app.get("/dashboard", authUser, (req, res) => {
-  res.send("Dashboard Page")
-})
+app.use(cors())
 
 
 function setUser(req, res, next) {
@@ -36,12 +28,13 @@ function setUser(req, res, next) {
 }
 
 
-app.use("/users", userRouter)
+
+app.use("/api/v1/users", userRouter)
 app.use(setUser)
-app.use("/runs", runRouter)
-app.use("/vehicles", vehicleRouter)
-app.use("/drivers", driverRouter)
+app.use("/api/v1/runs", runRouter)
+app.use("/api/v1/vehicles", vehicleRouter)
+app.use("/api/v1/drivers", driverRouter)
 
 
 const port = 3300
-app.listen(port, () => console.log(`App running at http://localhost:${port}/`))
+app.listen(port || 3300, () => console.log(`App running at http://localhost:${port}/`))

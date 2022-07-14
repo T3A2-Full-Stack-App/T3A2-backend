@@ -1,6 +1,6 @@
 
 ### POST / RUNS / ADMIN
-Post http://localhost:3300/runs
+Post http://localhost:3300/api/v1/runs
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 
 ### GET  / RUNS / ADMIN
 
-Get http://localhost:3300/runs
+Get http://localhost:3300/api/v1/runs
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 
 ### GET / A RUN / ADMIN
 
-Get http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
+Get http://localhost:3300/api/v1/runs/62cd1373b40d9c6f4ddccf2e
 Content-Type: application/json
 
 {
@@ -33,7 +33,7 @@ Content-Type: application/json
 
 
 ### DELETE / A RUN / ADMIN
-Delete http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
+Delete http://localhost:3300/api/v1/runs/62cd1373b40d9c6f4ddccf2e
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ### UPDATE / A RUN / ADMIN or RUN
-Put http://localhost:3300/runs/62cd1373b40d9c6f4ddccf2e
+Put http://localhost:3300/api/v1/runs/62cd1373b40d9c6f4ddccf2e
 Content-Type: application/json
 
 {

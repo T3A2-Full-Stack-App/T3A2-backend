@@ -18,6 +18,7 @@
   "homepage": "https://github.com/T3A2-Full-Stack-App/T3A2-backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-unless": "^2.1.0",

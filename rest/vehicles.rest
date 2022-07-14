@@ -1,6 +1,6 @@
 ### GET - Admin
 
-Get http://localhost:3300/vehicles
+Get http://localhost:3300/api/v1/vehicles
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 ### POST- Admin
 
-Post http://localhost:3300/vehicles
+Post http://localhost:3300/api/v1/vehicles
 Content-Type: application/json
 
 {
@@ -27,7 +27,7 @@ Content-Type: application/json
 
 ### GET a vehicle - admin or vehicle driver
 
-Get http://localhost:3300/vehicles/62cd672dc738ad24f929f0b0
+Get http://localhost:3300/api/v1/vehicles/62cd672dc738ad24f929f0b0
 
 {
     "_id": "62ccd3eecada19e652d3a0a4"
@@ -36,7 +36,7 @@ Get http://localhost:3300/vehicles/62cd672dc738ad24f929f0b0
 
 ### PUT - admin or vehicle driver
 
-Put http://localhost:3300/vehicles/62cd672dc738ad24f929f0b0
+Put http://localhost:3300/api/v1/vehicles/62cd672dc738ad24f929f0b0
 Content-Type: application/json
 
 {
@@ -48,7 +48,7 @@ Content-Type: application/json
 
 ### DELETE - admin
 
-Delete http://localhost:3300/vehicles/62cd672dc738ad24f929f0b0
+Delete http://localhost:3300/api/v1/vehicles/62cd672dc738ad24f929f0b0
 Content-Type: application/json
 
 {
