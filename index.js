@@ -3,6 +3,7 @@ const app = express()
 const cors = require("cors")
 require("dotenv").config()
 const { authUser, authRole } = require("./basicAuth")
+
 const runRouter = require("./routes/runs")
 const vehicleRouter = require("./routes/vehicles")
 const driverRouter = require("./routes/drivers")
@@ -27,11 +28,12 @@ function setUser(req, res, next) {
 }
 
 
-app.use("/users", userRouter)
+
+app.use("/api/v1/users", userRouter)
 app.use(setUser)
-app.use("/runs", runRouter)
-app.use("/vehicles", vehicleRouter)
-app.use("/drivers", driverRouter)
+app.use("/api/v1/runs", runRouter)
+app.use("/api/v1/vehicles", vehicleRouter)
+app.use("/api/v1/drivers", driverRouter)
 
 
 const port = 3300

@@ -71,6 +71,15 @@ router.post("/tokenIsValid", async (req, res) => {
   }
 })
 
+
+
+
+
+
+
+
+
+// Need to add authentication here
 router.get("/", setUser, authUser, authRole("admin"), async (req, res, next) => {
   try {
     res.status(200).send(await UserModel.find())
@@ -78,6 +87,8 @@ router.get("/", setUser, authUser, authRole("admin"), async (req, res, next) => 
     res.status(400).send
   }
 })
+
+
 
 router.delete("/:id", setUser, authUser, authRole("admin"), (req, res) => {
   UserModel.findByIdAndDelete(req.params.id, (err, doc) => {
@@ -90,6 +101,9 @@ router.delete("/:id", setUser, authUser, authRole("admin"), (req, res) => {
     }
   })
 })
+
+
+
 
 
 // Remember when adding a vehicle to a user, need to add the user to the vehicle also

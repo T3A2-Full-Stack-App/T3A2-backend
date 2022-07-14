@@ -1,18 +1,18 @@
 
 ### Login auth: public
 
-Get http://localhost:3300/login
+Get http://localhost:3300/api/v1/login
 
 
 
 ### POST User Routes auth: public
 
-Post http://localhost:3300/users/register
+Post http://localhost:3300/api/v1users/register
 Content-Type: application/json
 
 {
-    "email": "mike@wizzcouriers.com",
-    "firstName": "Mike",
+    "email": "Geoff@wizzcouriers.com",
+    "firstName": "Geoff",
     "lastName": "Jaws",
     "password": "123456",
     "passwordCheck": "123456",
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ### POST User Routes auth: public
 
-Post http://localhost:3300/users/login
+Post http://localhost:3300/api/v1/users/login
 Content-Type: application/json
 
 {
@@ -33,38 +33,13 @@ Content-Type: application/json
     "role": "admin"
 }
 
-### Dashboard auth: users
-
-Get http://localhost:3300/dashboard
-Content-Type: application/json
-
-{
-    "userId": 1
-}
 
 
 
-### Get Vehicles auth: ADMIN
-
-get http://localhost:3300/vehicles
-Content-Type: application/json
-
-{
-    "userId": 2
-}
-
-### Show Vehicle auth: ADMIN or VEHICLE_DRIVER
-
-get http://localhost:3300/vehicles/2
-Content-Type: application/json
-
-{
-    "userId": 2
-}
 
 ### GET Drivers auth: admin
 
-Get http://localhost:3300/users
+Get http://localhost:3300/api/v1/users
 Content-Type: application/json
 
 {
@@ -74,7 +49,7 @@ Content-Type: application/json
 
 ### DELETE user auth: admin
 
-Delete http://localhost:3300/users/62ce39abc43c697ecc3f3756
+Delete http://localhost:3300/api/v1/users/62ce39abc43c697ecc3f3756
 Content-Type: application/json
 
 {
@@ -85,7 +60,7 @@ Content-Type: application/json
 
 ### UPDATE user auth: admin
 
-Put http://localhost:3300/users/62ce3198fa3884cf0f177581
+Put http://localhost:3300/api/v1/users/62ce3198fa3884cf0f177581
 Content-Type: application/json
 
 {
