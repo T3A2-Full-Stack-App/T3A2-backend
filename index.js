@@ -10,7 +10,8 @@ const driverRouter = require("./routes/drivers")
 const userRouter = require("./routes/users")
 const UserModel = require("./database/user_model")
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
+
 
 
 function setUser(req, res, next) {
