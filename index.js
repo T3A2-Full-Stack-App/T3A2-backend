@@ -36,5 +36,5 @@ app.use("/api/v1/vehicles", vehicleRouter)
 app.use("/api/v1/drivers", driverRouter)
 
 
-const port = 3300
-app.listen(port || 3300, () => console.log(`App running at http://localhost:${port}/`))
+const port = process.env.PORT || 3405
+app.listen(port, () => console.log(`App running at http://localhost:${port}/`))
