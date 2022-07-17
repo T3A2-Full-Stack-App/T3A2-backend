@@ -34,7 +34,7 @@ app.get("/", async (req, res, next) => {
 
 
 app.use("/api/v1/users", userRouter)
-app.use(setUser)
+// app.use(setUser)
 app.use("/api/v1/runs", runRouter)
 app.use("/api/v1/vehicles", vehicleRouter)
 app.use("/api/v1/drivers", driverRouter)
