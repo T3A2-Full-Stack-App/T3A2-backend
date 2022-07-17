@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-// const cors = require("cors")
+const cors = require("cors")
 require("dotenv").config()
 const { authUser, authRole } = require("./basicAuth")
 
@@ -10,7 +10,7 @@ const driverRouter = require("./routes/drivers")
 const userRouter = require("./routes/users")
 const UserModel = require("./database/user_model")
 app.use(express.json())
-// app.use(cors())
+app.use(cors())
 
 
 
@@ -28,6 +28,9 @@ function setUser(req, res, next) {
   }
 }
 
+app.get("/", async (req, res, next) => {
+  res.render('Login')
+} )
 
 
 app.use("/api/v1/users", userRouter)
