@@ -1,0 +1,55 @@
+
+### POST / RUNS / ADMIN
+Post http://localhost:3405/api/v1/runs
+Content-Type: application/json
+
+{
+    "_id": "62d3e058daf07ad643bf7629",
+    "name": "Route 4",
+    "area": "Ballina"
+}
+
+
+### GET  / RUNS / ADMIN
+
+Get http://localhost:3405/api/v1/runs
+Content-Type: application/json
+
+{
+    "_id": "62d3e058daf07ad643bf7629"
+
+}
+
+
+### GET / A RUN / ADMIN
+
+Get http://localhost:3405/api/v1/runs/62cd1373b40d9c6f4ddccf2e
+Content-Type: application/json
+
+{
+    "_id": "62d3e058daf07ad643bf7629"
+
+}
+
+
+### DELETE / A RUN / ADMIN
+Delete http://localhost:3405/api/v1/runs/62cd1373b40d9c6f4ddccf2e
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}
+
+### UPDATE / A RUN / ADMIN or RUN
+Put http://localhost:3405/api/v1/runs/62cd1373b40d9c6f4ddccf2e
+Content-Type: application/json
+
+{
+    "_id": "62d3e058daf07ad643bf7629",
+    "name": "Route 2",
+    "area": "Murbah"
+
+}
+
+

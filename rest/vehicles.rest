@@ -1,0 +1,56 @@
+### GET - Admin
+
+Get http://localhost:3405/api/v1/vehicles
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44"
+
+}
+
+### POST- Admin
+
+Post http://localhost:3405/api/v1/vehicles
+Content-Type: application/json
+
+{
+    "_id": "62ccad750c6b8ee48710ff44",
+    "make": "Ford",
+    "model": "Truck",
+    "year": "2018",
+    "registration": "ABC123",
+    "user": "62ccd3eecada19e652d3a0a4",
+    "kilometers": "200000",
+    "nextService": "215000"
+}
+
+
+### GET a vehicle - admin or vehicle driver
+
+Get http://localhost:3405/api/v1/vehicles/62cd672dc738ad24f929f0b0
+
+{
+    "_id": "62ccd3eecada19e652d3a0a4"
+
+}
+
+### PUT - admin or vehicle driver
+
+Put http://localhost:3405/api/v1/vehicles/62cd672dc738ad24f929f0b0
+Content-Type: application/json
+
+{
+    "_id": "62cd62d2686cd30e922d2a80",
+    "kilometers": "212000",
+    "comment": "Front left tyre is bald"
+
+}
+
+### DELETE - admin
+
+Delete http://localhost:3405/api/v1/vehicles/62cd672dc738ad24f929f0b0
+Content-Type: application/json
+
+{
+    "_id": "62ce31a5fa3884cf0f177583"
+}
