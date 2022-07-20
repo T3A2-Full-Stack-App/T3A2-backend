@@ -11,12 +11,12 @@ Post http://localhost:3405/api/v1/users/register
 Content-Type: application/json
 
 {
-    "email": "Kyle@wizzcouriers.com",
-    "firstName": "Kyle",
-    "lastName": "Matthews",
+    "email": "Jess@wizzcouriers.com",
+    "firstName": "Jess",
+    "lastName": "Rodgerson",
     "password": "123456",
     "passwordCheck": "123456",
-    "role": "admin"
+    "role": "driver"
 }
 
 ### POST User Routes auth: public
@@ -42,10 +42,9 @@ Content-Type: application/json
 Get http://localhost:3405/api/v1/users
 Content-Type: application/json
 
-{
-    "_id": "62d3e058daf07ad643bf7629"
-
-}
+# {
+#     "_id": "62d3e058daf07ad643bf7629"
+# }
 
 ### DELETE user auth: admin
 
@@ -64,7 +63,7 @@ Put http://localhost:3405/api/v1/users/62ce3198fa3884cf0f177581
 Content-Type: application/json
 
 {
-    "_id": "62ce31a5fa3884cf0f177583",
+    "_id": "62d3e058daf07ad643bf7629",
     "firstName": "Mike",
     "lastName": "Salisbury",
     "vehicle": "62ce3bc185c51ff0c5923cca"

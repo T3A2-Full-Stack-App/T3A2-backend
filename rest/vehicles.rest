@@ -3,10 +3,7 @@
 Get http://localhost:3405/api/v1/vehicles
 Content-Type: application/json
 
-{
-    "_id": "62ccad750c6b8ee48710ff44"
 
-}
 
 ### POST- Admin
 
@@ -14,14 +11,14 @@ Post http://localhost:3405/api/v1/vehicles
 Content-Type: application/json
 
 {
-    "_id": "62ccad750c6b8ee48710ff44",
-    "make": "Ford",
-    "model": "Truck",
-    "year": "2018",
-    "registration": "ABC123",
-    "user": "62ccd3eecada19e652d3a0a4",
-    "kilometers": "200000",
-    "nextService": "215000"
+    "_id": "62d7f9b7340c2886c0abb226",
+    "make": "Merceded",
+    "model": "Sprinter",
+    "year": "2022",
+    "registration": "BRN201",
+    "user": "62d7fa0c340c2886c0abb22b",
+    "kilometers": "5022",
+    "nextService": "10000"
 }
 
 
@@ -42,7 +39,7 @@ Content-Type: application/json
 {
     "_id": "62cd62d2686cd30e922d2a80",
     "kilometers": "212000",
-    "comment": "Front left tyre is bald"
+    "condition": "Broken CV joint"
 
 }
 
