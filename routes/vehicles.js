@@ -3,8 +3,9 @@ const router = express.Router()
 const VehicleModel = require("../database/vehicles_model")
 const { authUser, authRole } = require("../basicAuth")
 const { canViewVehicle } = require("../permissions/vehicle")
+const { difference } = require("underscore")
 
-router.get("/", authUser, authRole("admin"), async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     res.status(200).send(await VehicleModel.find())
   } catch {
@@ -13,8 +14,12 @@ router.get("/", authUser, authRole("admin"), async (req, res) => {
   }
 })
 
-router.post("/", authUser, authRole("admin"), async (req, res) => {
-  // Need to construct newVehicle object so that vehicle._id != user._id
+router.post("/",  async (req, res) => {
+
+  function difference(nextService, kilometers)
+    {return nextService - kilometers}
+
+    // Need to construct newVehicle object so that vehicle._id != user._id
   const newVehicle = {
     make: req.body.make,
     model: req.body.model,
@@ -23,6 +28,8 @@ router.post("/", authUser, authRole("admin"), async (req, res) => {
     user: req.body.user,
     kilometers: req.body.kilometers,
     nextService: req.body.nextService,
+    kmRemaining: difference(parseInt(req.body.nextService), parseInt(req.body.kilometers)),
+    condition: req.body.condition
   }
   VehicleModel.create(newVehicle, (err, doc) => {
     if (err) {
@@ -34,7 +41,7 @@ router.post("/", authUser, authRole("admin"), async (req, res) => {
   })
 })
 
-router.get("/:id", setVehicle, authUser, authGetVehicle, (req, res) => {
+router.get("/:id", setVehicle,  (req, res) => {
   try {
     res.status(200).send(req.vehicle)
   } catch {
@@ -42,7 +49,7 @@ router.get("/:id", setVehicle, authUser, authGetVehicle, (req, res) => {
   }
 })
 
-router.put("/:id", authUser, setVehicle, authGetVehicle, (req, res) => {
+router.put("/:id",  setVehicle,(req, res) => {
   console.log(req.vehicle)
   VehicleModel.findByIdAndUpdate(
     req.params.id,
@@ -54,7 +61,8 @@ router.put("/:id", authUser, setVehicle, authGetVehicle, (req, res) => {
       user: req.body.user,
       kilometers: req.body.kilometers,
       nextService: req.body.nextService,
-        $push: { comments: { entry: req.body.comment } }
+      kmRemaning: Math(req.body.nextService - req.body.kilometers),
+      condition: req.body.condition
     },
     { new: true },
     (err, doc) => {
@@ -67,7 +75,7 @@ router.put("/:id", authUser, setVehicle, authGetVehicle, (req, res) => {
   )
 })
 
-router.delete("/:id", setVehicle, authUser, authRole("admin"), (req, res) => {
+router.delete("/:id", setVehicle,  (req, res) => {
     VehicleModel.deleteOne(req.vehicle, (err, doc) => {
         if (err) {
             res.status(400)

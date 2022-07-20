@@ -9,10 +9,8 @@ const vehicleSchema = new mongoose.Schema({
     user: { type: Schema.Types.ObjectId, ref: "User"},
     kilometers: { type: Number, required: true },
     nextService: { type: Number, required: true },
-    comments: [{ 
-        entry: { type: String },
-        date: { type: Date, default: Date.now}
-    }]
+    kmRemaining: { type: Number, required: true },
+    condition: { type: String, default: 'Satisfactory' }
 })
 
 const VehicleModel = mongoose.model('Vehicle', vehicleSchema)

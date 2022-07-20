@@ -32,12 +32,12 @@ app.get("/", async (req, res, next) => {
   res.render('Login')
 } )
 
-
+app.use("/api/v1/drivers", driverRouter)
 app.use("/api/v1/users", userRouter)
-app.use(setUser)
 app.use("/api/v1/runs", runRouter)
 app.use("/api/v1/vehicles", vehicleRouter)
-app.use("/api/v1/drivers", driverRouter)
+app.use(setUser)
+
 
 
 const port = process.env.PORT || 3405
