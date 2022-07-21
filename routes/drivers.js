@@ -12,9 +12,9 @@ router.get("/", async (req, res, next) => {
   }
 })
 
-router.get("/find", async (req, res, next) => {
+router.get("/get/:email/find", async (req, res, next) => {
   try {
-    res.status(200).send(await UserModel.findOne({ email: req.body.email }))
+    res.status(200).send(await UserModel.findOne({ email: req.params.email }))
   } catch {
     res.status(400)
     return res.send("Unable to show drivers")
