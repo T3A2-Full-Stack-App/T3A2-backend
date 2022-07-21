@@ -6,7 +6,9 @@ Content-Type: application/json
 {
     "_id": "62d3e058daf07ad643bf7629",
     "name": "Route 4",
-    "area": "Ballina"
+    "area": "Brisbane",
+    "user": "62cd1373b40d9c6f4ddccf2e",
+    "comments": "test"
 }
 
 
