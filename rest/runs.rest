@@ -4,7 +4,6 @@ Post http://localhost:3405/api/v1/runs
 Content-Type: application/json
 
 {
-    "driver": "Tony Higgs",
     "_id": "62d3e058daf07ad643bf7629",
     "name": "Route 4",
     "area": "Brisbane",
