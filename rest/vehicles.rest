@@ -71,3 +71,12 @@ Content-Type: application/json
 {
     "_id": "62ce31a5fa3884cf0f177583"
 }
+
+### Put request - update driverEmail
+
+Put http://localhost:3405/api/v1/vehicles/assigndriver/DSC222
+Content-Type: application/json
+
+{
+    "driverEmail": "dirk@wizzcouriers.com"
+}

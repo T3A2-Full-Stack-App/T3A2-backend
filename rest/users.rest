@@ -69,3 +69,31 @@ Content-Type: application/json
     "vehicle": "62ce3bc185c51ff0c5923cca"
 
 }
+
+### GET driver by email
+
+Get http://localhost:3405/api/v1/drivers
+
+
+
+
+
+### GET driver by email
+
+Get http://localhost:3405/api/v1/drivers/find
+Content-Type: application/json
+
+{
+    "email": "bob@wizzcouriers.com"
+
+}
+
+### Assign vehicle to driver
+
+Put http://localhost:3405/api/v1/drivers/62ce8fd7b342975e04bb01cc
+Content-Type: application/json
+
+{
+    "vehicleRegistration": "BCD212"
+
+}

@@ -103,11 +103,6 @@ router.delete("/:id", setUser, authUser, authRole("admin"), (req, res) => {
 })
 
 
-
-
-
-// Remember when adding a vehicle to a user, need to add the user to the vehicle also
-// As database is just referenced not embedded
 router.put("/:id", setUser, authUser, authRole("admin"), (req, res) => {
   UserModel.findByIdAndUpdate(
     req.params.id,

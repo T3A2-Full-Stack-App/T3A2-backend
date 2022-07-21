@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const runSchema = new mongoose.Schema({
   name: { type: String, required: true },
   area: { type: String, required: true },
-  user: { type: Schema.Types.ObjectId, ref: "User" },
+  userEmail: { type: String },
 })
 
 const RunModel = mongoose.model('Run', runSchema)

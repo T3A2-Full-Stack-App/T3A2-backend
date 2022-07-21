@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   password: { type: String, required: true, minlength: 5 },
   role: { type: String, required: true },
-  vehicle: { type: Schema.Types.ObjectId, ref: "Vehicle" },
+  vehicleRegistration: { type: String },
 })
 
 const UserModel = mongoose.model('User', userSchema)
