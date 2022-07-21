@@ -9,10 +9,9 @@ Content-Type: application/json
 
 Post http://localhost:3405/api/v1/vehicles
 Content-Type: application/json
-
 {
     "_id": "62d7f9b7340c2886c0abb226",
-    "make": "Merceded",
+    "make": "Mercedes",
     "model": "Sprinter",
     "year": "2022",
     "registration": "BRN201",
