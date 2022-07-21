@@ -30,16 +30,8 @@ Content-Type: application/json
 
 Post http://localhost:3405/api/v1/vehicles
 Content-Type: application/json
-
 {
     "_id": "62d7f9b7340c2886c0abb226",
-    "make": "Volvo",
-    "model": "FH18",
-    "year": "2020",
-    "registration": "DSC222",
-    "kilometers": "52022",
-    "nextService": "60000"
-}
 
 
 ### GET a vehicle - admin or vehicle driver
