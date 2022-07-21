@@ -3,7 +3,7 @@ const router = express.Router()
 const RunModel = require("../database/runs_model")
 const { authUser, authRole } = require("../basicAuth")
 
-router.get("/", authUser, authRole("admin"), async (req, res, next) => {
+router.get("/",  async (req, res, next) => {
   try {
     res.status(200).send(await RunModel.find())
   } catch {
@@ -12,7 +12,7 @@ router.get("/", authUser, authRole("admin"), async (req, res, next) => {
   }
 })
 
-router.post("/", authUser, authRole("admin"), async (req, res, next) => {
+router.post("/",  async (req, res, next) => {
   const newRun = {
     area: req.body.area,
     name: req.body.name,
@@ -26,7 +26,7 @@ router.post("/", authUser, authRole("admin"), async (req, res, next) => {
   })
 })
 
-router.get("/:id", setRun, authUser, (req, res) => {
+router.get("/:id", setRun, (req, res) => {
   try {
     res.status(200).send(req.run)
   } catch {
@@ -34,7 +34,7 @@ router.get("/:id", setRun, authUser, (req, res) => {
   }
 })
 
-router.delete("/:id", setRun, authUser, authRole("admin"), (req, res) => {
+router.delete("/:id", setRun, (req, res) => {
   RunModel.deleteOne(req.run, (err, doc) => {
     if (err) {
       res.status(405).send
@@ -45,7 +45,7 @@ router.delete("/:id", setRun, authUser, authRole("admin"), (req, res) => {
   })
 })
 
-router.put("/:id", authUser, (req, res, next) => {
+router.put("/:id", (req, res, next) => {
   RunModel.findByIdAndUpdate(
     req.params.id,
     { name: req.body.name, area: req.body.area },
