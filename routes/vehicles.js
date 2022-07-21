@@ -41,16 +41,58 @@ router.post("/",  async (req, res) => {
   })
 })
 
-router.get("/:id", setVehicle,  (req, res) => {
+router.get("/:registration", async (req, res) => {
   try {
-    res.status(200).send(req.vehicle)
+    res
+      .status(200)
+      .send(
+        await VehicleModel.findOne({ registration: req.params.registration })
+      )
   } catch {
     res.status(400)
+    return res.send("Unable to display vehicles")
   }
 })
 
-router.put("/:id",  setVehicle,(req, res) => {
-  console.log(req.vehicle)
+router.put("/:registration", (req, res) => {
+
+  function difference(nextService, kilometers) {
+    return nextService - kilometers
+  }
+
+  VehicleModel.findOneAndUpdate(
+    { registration: req.params.registration },
+    {
+      make: req.body.make,
+      model: req.body.model,
+      year: req.body.year,
+      registration: req.body.registration,
+      user: req.body.user,
+      kilometers: req.body.kilometers,
+      nextService: req.body.nextService,
+      kmRemaining: difference(req.body.nextService, req.body.kilometers),
+      condition: req.body.condition,
+    },
+    { new: true },
+    (err, doc) => {
+      if (err) {
+        res.status(400).send
+      } else {
+        res.status(200).send(doc)
+      }
+    }
+  )
+})
+
+
+
+
+router.put("/:id", setVehicle, (req, res) => {
+  
+   function difference(nextService, kilometers) {
+     return nextService - kilometers
+   }
+
   VehicleModel.findByIdAndUpdate(
     req.params.id,
     {
@@ -61,8 +103,8 @@ router.put("/:id",  setVehicle,(req, res) => {
       user: req.body.user,
       kilometers: req.body.kilometers,
       nextService: req.body.nextService,
-      kmRemaning: Math(req.body.nextService - req.body.kilometers),
-      condition: req.body.condition
+      kmRemaining: difference(req.body.nextService, req.body.kilometers),
+      condition: req.body.condition,
     },
     { new: true },
     (err, doc) => {

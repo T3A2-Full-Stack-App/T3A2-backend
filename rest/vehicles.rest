@@ -3,6 +3,27 @@
 Get http://localhost:3405/api/v1/vehicles
 Content-Type: application/json
 
+### GET A Vehicle by Registration - Admin
+
+Get http://localhost:3405/api/v1/vehicles/DSC222
+Content-Type: application/json
+
+### PUT Vehicle by Registration - Admin
+
+Put http://localhost:3405/api/v1/vehicles/DSC222
+Content-Type: application/json
+
+{
+  "_id": "62d8af87ddd83f8478a61586",
+  "make": "Volvo",
+  "model": "FH18",
+  "year": "2020",
+  "registration": "DSC222",
+  "kilometers": "58022",
+  "nextService": "65000",
+  "condition": "Satisfactory",
+  "__v": 0
+}
 
 
 ### POST- Admin
@@ -12,13 +33,12 @@ Content-Type: application/json
 
 {
     "_id": "62d7f9b7340c2886c0abb226",
-    "make": "Merceded",
-    "model": "Sprinter",
-    "year": "2022",
-    "registration": "BRN201",
-    "user": "62d7fa0c340c2886c0abb22b",
-    "kilometers": "5022",
-    "nextService": "10000"
+    "make": "Volvo",
+    "model": "FH18",
+    "year": "2020",
+    "registration": "DSC222",
+    "kilometers": "52022",
+    "nextService": "60000"
 }
 
 

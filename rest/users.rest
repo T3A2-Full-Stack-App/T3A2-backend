@@ -11,9 +11,9 @@ Post http://localhost:3405/api/v1/users/register
 Content-Type: application/json
 
 {
-    "email": "Jess@wizzcouriers.com",
-    "firstName": "Jess",
-    "lastName": "Rodgerson",
+    "email": "Sam@wizzcouriers.com",
+    "firstName": "Sam",
+    "lastName": "Davis",
     "password": "123456",
     "passwordCheck": "123456",
     "role": "driver"
