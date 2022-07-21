@@ -67,7 +67,6 @@ router.put("/:registration", (req, res) => {
       model: req.body.model,
       year: req.body.year,
       registration: req.body.registration,
-      user: req.body.user,
       kilometers: req.body.kilometers,
       nextService: req.body.nextService,
       kmRemaining: difference(req.body.nextService, req.body.kilometers),
@@ -84,27 +83,12 @@ router.put("/:registration", (req, res) => {
   )
 })
 
+router.put("/assigndriver/:registration", (req, res) => {
 
-
-
-router.put("/:id", setVehicle, (req, res) => {
-  
-   function difference(nextService, kilometers) {
-     return nextService - kilometers
-   }
-
-  VehicleModel.findByIdAndUpdate(
-    req.params.id,
+  VehicleModel.findOneAndUpdate(
+    { registration: req.params.registration },
     {
-      make: req.body.make,
-      model: req.body.model,
-      year: req.body.year,
-      registration: req.body.registration,
-      user: req.body.user,
-      kilometers: req.body.kilometers,
-      nextService: req.body.nextService,
-      kmRemaining: difference(req.body.nextService, req.body.kilometers),
-      condition: req.body.condition,
+      driverEmail: req.body.driverEmail,
     },
     { new: true },
     (err, doc) => {
@@ -116,6 +100,9 @@ router.put("/:id", setVehicle, (req, res) => {
     }
   )
 })
+
+
+
 
 router.delete("/:id", setVehicle,  (req, res) => {
     VehicleModel.deleteOne(req.vehicle, (err, doc) => {

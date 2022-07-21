@@ -6,7 +6,7 @@ const vehicleSchema = new mongoose.Schema({
     model: { type: String, required: true },
     year: { type: Number, required: true },
     registration: { type: String, required: true, unique: true },
-    user: { type: Schema.Types.ObjectId, ref: "User", default: "No driver"},
+    driverEmail: { type: String, default: "No driver"},
     kilometers: { type: Number, required: true },
     nextService: { type: Number, required: true },
     kmRemaining: { type: Number, required: true },
