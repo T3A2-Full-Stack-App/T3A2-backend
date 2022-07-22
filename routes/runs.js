@@ -3,7 +3,7 @@ const router = express.Router()
 const RunModel = require("../database/runs_model")
 const { authUser, authRole } = require("../basicAuth")
 
-router.get("/",  async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     res.status(200).send(await RunModel.find())
   } catch {
@@ -12,7 +12,7 @@ router.get("/",  async (req, res, next) => {
   }
 })
 
-router.post("/",  async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   const newRun = {
     area: req.body.area,
     name: req.body.name,
@@ -26,13 +26,17 @@ router.post("/",  async (req, res, next) => {
   })
 })
 
-router.get("/:id", setRun, (req, res) => {
-  try {
-    res.status(200).send(req.run)
-  } catch {
-    res.status(400)
-  }
+router.get("/:area", (req, res) => {
+  RunModel.findOne({ area: req.params.area }, (err, doc) => {
+    if (err) {
+      res.status(400).send
+    } else {
+      res.status(200).send(doc)
+    }
+  })
 })
+
+
 
 router.delete("/:id", setRun, (req, res) => {
   RunModel.deleteOne(req.run, (err, doc) => {
@@ -49,7 +53,7 @@ router.put("/:id", (req, res, next) => {
   RunModel.findByIdAndUpdate(
     req.params.id,
     { name: req.body.name, area: req.body.area },
-    {new : true},
+    { new: true },
     (err, doc) => {
       if (err) {
         res.status(400)
