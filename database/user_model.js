@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true, minlength: 5 },
   role: { type: String, required: true },
   vehicleRegistration: { type: String },
+  run: { type: String, default: "No run" },
 })
 
 const UserModel = mongoose.model('User', userSchema)
