@@ -19,7 +19,6 @@ router.post("/",  async (req, res) => {
   function difference(nextService, kilometers)
     {return nextService - kilometers}
 
-    // Need to construct newVehicle object so that vehicle._id != user._id
   const newVehicle = {
     make: req.body.make,
     model: req.body.model,
@@ -70,6 +69,46 @@ router.put("/:registration", (req, res) => {
       kilometers: req.body.kilometers,
       nextService: req.body.nextService,
       kmRemaining: difference(req.body.nextService, req.body.kilometers),
+      condition: req.body.condition,
+    },
+    { new: true },
+    (err, doc) => {
+      if (err) {
+        res.status(400).send
+      } else {
+        res.status(200).send(doc)
+      }
+    }
+  )
+})
+
+router.put("/driver/:registration", (req, res) => {
+  function difference(nextService, kilometers) {
+    return nextService - kilometers
+  }
+
+  VehicleModel.findOneAndUpdate(
+    { registration: req.params.registration },
+    {
+      kilometers: req.body.kilometers,
+      nextService: req.body.nextService,
+      kmRemaining: difference(req.body.nextService, req.body.kilometers),
+    },
+    { new: true },
+    (err, doc) => {
+      if (err) {
+        res.status(400).send
+      } else {
+        res.status(200).send(doc)
+      }
+    }
+  )
+})
+
+router.put("/condition/:registration", (req, res) => {
+  VehicleModel.findOneAndUpdate(
+    { registration: req.params.registration },
+    {
       condition: req.body.condition,
     },
     { new: true },
