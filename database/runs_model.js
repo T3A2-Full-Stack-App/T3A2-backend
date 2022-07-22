@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const runSchema = new mongoose.Schema({
   name: { type: String, required: true },
   area: { type: String, required: true },
-  userEmail: { type: String },
+  driverEmail: { type: String, default: 'No driver assigned' },
 });
 
 

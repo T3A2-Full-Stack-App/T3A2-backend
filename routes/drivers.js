@@ -38,4 +38,21 @@ router.put("/:id",  (req, res) => {
   )
 })
 
+router.put("/assignrun/:id", (req, res) => {
+  UserModel.findByIdAndUpdate(
+    req.params.id,
+    {
+      runName: req.body.runName,
+    },
+    { new: true },
+    (err, doc) => {
+      if (err) {
+        res.status(400).send
+      } else {
+        res.status(200).send(doc)
+      }
+    }
+  )
+})
+
 module.exports = router
