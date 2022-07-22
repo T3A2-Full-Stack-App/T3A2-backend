@@ -28,9 +28,7 @@ function setUser(req, res, next) {
   }
 }
 
-app.get("/", async (req, res, next) => {
-  res.render('Login')
-} )
+
 
 app.use("/api/v1/drivers", driverRouter)
 app.use("/api/v1/users", userRouter)

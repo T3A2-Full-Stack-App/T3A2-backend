@@ -1,7 +1,7 @@
 
 ### Login auth: public
 
-Get http://localhost:23087/api/v1/login
+Get https://fleetwizzard.herokuapp.com/api/v1/login
 
 
 
