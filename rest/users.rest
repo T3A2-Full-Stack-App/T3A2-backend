@@ -80,13 +80,8 @@ Get http://localhost:3405/api/v1/drivers
 
 ### GET driver by email
 
-Get http://localhost:3405/api/v1/drivers/find
-Content-Type: application/json
+Get http://localhost:3405/api/v1/drivers/get/bob@wizzcouriers.com/find
 
-{
-    "email": "bob@wizzcouriers.com"
-
-}
 
 ### Assign vehicle to driver
 

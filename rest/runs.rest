@@ -44,14 +44,18 @@ Content-Type: application/json
 }
 
 ### UPDATE / A RUN / ADMIN or RUN
-Put http://localhost:3405/api/v1/runs/62cd1373b40d9c6f4ddccf2e
+Put http://localhost:3405/api/v1/runs/62d9534d2580ed678a2d5b23
 Content-Type: application/json
 
 {
-    "_id": "62d3e058daf07ad643bf7629",
     "name": "Route 2",
     "area": "Murbah"
 
 }
+
+### GET / A RUN / 
+Get http://localhost:3405/api/v1/runs/Morayfield
+
+
 
 
