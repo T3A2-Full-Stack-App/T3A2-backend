@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   password: { type: String, required: true, minlength: 5 },
   role: { type: String, required: true },
-  vehicleRegistration: { type: String },
+  vehicleRegistration: { type: String, default: "No vehicle assigned"},
+  runName: { type: String, default: "No run assigned" },
 })
 
 const UserModel = mongoose.model('User', userSchema)

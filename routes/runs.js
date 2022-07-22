@@ -65,6 +65,22 @@ router.put("/:id", (req, res, next) => {
   )
 })
 
+router.put("/assigndriver/:id", (req, res, next) => {
+  RunModel.findByIdAndUpdate(
+    req.params.id,
+    { driverEmail: req.body.driverEmail },
+    { new: true },
+    (err, doc) => {
+      if (err) {
+        res.status(400)
+        return res.send("Unable to udpate run")
+      } else {
+        res.status(200).send(doc)
+      }
+    }
+  )
+})
+
 function setRun(req, res, next) {
   const runId = req.params.id
   if (runId) {
