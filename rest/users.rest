@@ -39,14 +39,8 @@ Content-Type: application/json
 
 ### GET Drivers auth: admin
 
-Get http://localhost:3405/api/v1/users
-Content-Type: application/json
+Get https://fleetwizzard.herokuapp.com/api/v1/users
 
-# {
-#     "_id": "62d3e058daf07ad643bf7629"
-# }
-
-### DELETE user auth: admin
 
 Delete http://localhost:3405/api/v1/users/62ce39abc43c697ecc3f3756
 Content-Type: application/json
