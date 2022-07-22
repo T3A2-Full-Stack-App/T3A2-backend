@@ -35,16 +35,12 @@ Content-Type: application/json
 
 
 ### DELETE / A RUN / ADMIN
-Delete http://localhost:3405/api/v1/runs/62cd1373b40d9c6f4ddccf2e
-Content-Type: application/json
+Delete http://localhost:3405/api/v1/runs/62d953382580ed678a2d5b20
 
-{
-    "_id": "62ccad750c6b8ee48710ff44"
 
-}
 
 ### UPDATE / A RUN / ADMIN or RUN
-Put http://localhost:3405/api/v1/runs/62d9534d2580ed678a2d5b23
+Put http://localhost:3405/api/v1/runs/62d953382580ed678a2d5b20
 Content-Type: application/json
 
 {

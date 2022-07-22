@@ -36,6 +36,16 @@ router.get("/:area", (req, res) => {
   })
 })
 
+router.get("/driver/:driverEmail/find", (req, res) => {
+  RunModel.findOne({ driverEmail: req.params.driverEmail}, (err, doc) => {
+    if (err) {
+      res.status(400).send
+    } else {
+      res.status(200).send(doc)
+    }
+  })
+})
+
 
 
 router.delete("/:id", setRun, (req, res) => {
@@ -80,6 +90,8 @@ router.put("/assigndriver/:id", (req, res, next) => {
     }
   )
 })
+
+
 
 function setRun(req, res, next) {
   const runId = req.params.id
